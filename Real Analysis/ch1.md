@@ -4,26 +4,9 @@ title: Introdution to Real and Complex number systems
 ---
 
 ## Von-Neumann Construction of Naturals
-There are infinitely many prime numbers.
+The Natural numbers is the infinite set \mathbb{N} = {1,2,3,....} which is crucial for counting, designing sequences etc. In ZF, the natural numbers are created from the empty set, in a process called von-neumann construction. We use no urelements in ZF (commonly known as thr Zermelo-Fraenkel Set theory).
 
-### Proof (Euclid)
-Suppose for contradiction that there is a finite number of primes, which we can list completely as:
-$$P = \{p_1, p_2, \dots, p_n\}$$
+### Construction
+Our universe begins with the empty set, \emptyset.
 
-Consider the integer $N$ constructed by multiplying all these primes together and adding $1$:
-$$N = (p_1 \cdot p_2 \cdot \dots \cdot p_n) + 1$$
-
-By the Fundamental Theorem of Arithmetic, $N$ must have at least one prime factor, let's call it $q$. 
-
-Since our list $P$ contains *all* prime numbers, $q$ must be one of the primes in our list (i.e., $q = p_i$ for some $1 \le i \le n$). Therefore, $q$ cleanly divides the product:
-$$q \mid (p_1 \cdot p_2 \cdot \dots \cdot p_n)$$
-
-However, by definition, $q$ also divides $N$. This implies that $q$ must divide the difference:
-$$q \mid [N - (p_1 \cdot p_2 \cdot \dots \cdot p_n)]$$
-
-Since $N - (p_1 \cdot p_2 \cdot \dots \cdot p_n) = 1$, we conclude that:
-$$q \mid 1$$
-
-But no prime number can divide $1$, creating a **contradiction**. 
-
-Thus, the initial assumption that there are finitely many primes must be false. $\blacksquare$
+$\blacksquare$
