@@ -69,49 +69,43 @@
     <h2><a href="{{ '/' | relative_url }}" style="color: inherit;">Math Notes</a></h2>
     <ul>
         {% comment %} 1. Filter out pages without titles or 404 pages {% endcomment %}
-        {% assign valid_pages = site.pages |浏览 where_exp: "item", "item.title != nil and item.url != '/404.html'" | sort: "path" %}
+        {% assign valid_pages = site.pages | where_exp: "item", "item.title != nil and item.url != '/404.html'" | sort: "path" %}
 
-        {% comment %} 2. Group the remaining pages by their directory path {% endcomment %}
-        {% assign grouped_pages = valid_pages | group_by_exp: "item", "
-            {% assign parts = item.path | split: '/' %}
-            {% if parts.size > 1 %}
-                {{ parts[0] | capitalize }}
-            {% else %}
-                General
-            {% endif %}" 
-        %}
+        {% comment %} 2. Map and group pages by top-level directory safely {% endcomment %}
+        {% assign grouped_pages = valid_pages | group_by_exp: "item", "item.path | split: '/' | first | capitalize" %}
 
         {% comment %} 3. Loop through each folder group {% endcomment %}
         {% for group in grouped_pages %}
             <li class="sidebar-folder">
                 <span class="folder-title" style="font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #666;">
-                    {{ group.name }}
+                    {% if group.name contains '.md' or group.name contains '.html' %}
+                        General
+                    {% else %}
+                        {{ group.name }}
+                    {% endif %}
                 </span>
+                
                 <ul>
-    {% comment %} Loops through all markdown files in your repository {% endcomment %}
-    {% assign sorted_pages = site.pages | sort: "title" %}
-    {% for p in sorted_pages %}
-        {% if p.title and p.url != "/404.html" %}
-            
-            {% if page.url == p.url %}
-                {% assign active_class = "active" %}
-            {% else %}
-                {% assign active_class = "" %}
-            {% endif %}
+                {% comment %} 4. Loop only through the items belonging to THIS specific group {% endcomment %}
+                {% assign sorted_items = group.items | sort: "title" %}
+                {% for p in sorted_items %}
+                    {% if page.url == p.url %}
+                        {% assign active_class = "active" %}
+                    {% else %}
+                        {% assign active_class = "" %}
+                    {% endif %}
 
-            <li>
-                <a href="{{ p.url | relative_url }}" class="{{ active_class }}">
-                    {{ p.title }}
-                </a>
-            </li>
-        {% endif %}
-    {% endfor %}
-</ul>
+                    <li>
+                        <a href="{{ p.url | relative_url }}" class="{{ active_class }}">
+                            {{ p.title }}
+                        </a>
+                    </li>
+                {% endfor %}
+                </ul>
             </li>
         {% endfor %}
     </ul>
 </nav>
-
     <main class="main-content">
         {{ content }}
     </main>
