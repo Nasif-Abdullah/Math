@@ -53,6 +53,7 @@ Dropping the antisymmetric property, i.e. elements aren't identical.
 ## Lattices
 
 Lattices are a fundamental construct of Order theory. A lattice is a special type of poset where every pairs have a unique 
+<pre><code class="language-mermaid">
 ```mermaid
 graph BT
     1 --> 2
@@ -62,3 +63,4 @@ graph BT
     3 --> 6
     4 --> 12
     6 --> 12
+</code></pre>
