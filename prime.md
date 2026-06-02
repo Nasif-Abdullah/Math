@@ -1,3 +1,8 @@
+---
+layout: default
+title: Infinitude of Primes
+---
+
 # Pure Mathematics Notes
 
 ## Theorem: Infinitude of Primes
