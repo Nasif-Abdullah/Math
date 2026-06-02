@@ -29,9 +29,9 @@ Partial order is not defined for all pair of elements in a set $$A$$, but when a
 It has some special properties, namely-
 
 - <b>Comparability:</b> Two elements a and b are comparable if $$a \le b \lor b \le a$$. If neither is true, the elements are incomparable.
-- <b>Bounds:</b> $$\exists a,b$$ s.t. $$(\forall x \in A) \; x \le a$$ and $$ $$(\forall x \in A) \; x \ge b$$. A poset can have multiple such elements.
+- <b>Bounds:</b> $$\exists a,b$$ s.t. $$(\forall x \in A) \; x \le a$$ and $$(\forall x \in A) \; x \ge b$$. A poset can have multiple such elements.
 
-Example: The divides relation (a \mid b) on integers. 2 \le 6 and 3 \le 6 but, 2 and 3 don't divide each other, so they are incomparable.
+Example: The divides relation ($$a \mid b$$) on integers. $$2 \le 6$$ and $$3 \le 6$$ but, 2 and 3 don't divide each other, so they are incomparable.
 
 ### Posets
 Posets are sets that have a relation R defined on themm, and they need not to be comparable. Hasse diagrams exist to visually represent finite posets.
