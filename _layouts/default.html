@@ -71,35 +71,53 @@
         {% comment %} 1. Filter out pages without titles or 404 pages {% endcomment %}
         {% assign valid_pages = site.pages | where_exp: "item", "item.title != nil and item.url != '/404.html'" | sort: "path" %}
 
-        {% comment %} 2. Map and group pages by top-level directory safely {% endcomment %}
-        {% assign grouped_pages = valid_pages | group_by_exp: "item", "item.path | split: '/' | first | capitalize" %}
+        {% comment %} 2. Group purely by the first part of the path block {% endcomment %}
+        {% assign grouped_pages = valid_pages | group_by_exp: "item", "item.path" %}
 
-        {% comment %} 3. Loop through each folder group {% endcomment %}
-        {% for group in grouped_pages %}
+        {% comment %} Let's group manually or handle formatting dynamically below {% endcomment %}
+        {% assign group_names = "" %}
+        {% for item in valid_pages %}
+            {% assign parts = item.path | split: '/' %}
+            {% if parts.size > 1 %}
+                {% assign group_name = parts | first | capitalize %}
+            {% else %}
+                {% assign group_name = "General" %}
+            {% endif %}
+            {% unless group_names contains group_name %}
+                {% assign group_names = group_names | append: group_name | append: ":::" %}
+            {% endunless %}
+        {% endfor %}
+        {% assign unique_groups = group_names | split: ":::" | sort %}
+
+        {% comment %} Loop through each distinct directory group found {% endcomment %}
+        {% for current_group in unique_groups %}
+            {% if current_group == "" %}{% continue %}{% endif %}
             <li class="sidebar-folder">
                 <span class="folder-title" style="font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #666;">
-                    {% if group.name contains '.md' or group.name contains '.html' %}
-                        General
-                    {% else %}
-                        {{ group.name }}
-                    {% endif %}
+                    {{ current_group }}
                 </span>
                 
                 <ul>
-                {% comment %} 4. Loop only through the items belonging to THIS specific group {% endcomment %}
-                {% assign sorted_items = group.items | sort: "title" %}
-                {% for p in sorted_items %}
-                    {% if page.url == p.url %}
-                        {% assign active_class = "active" %}
+                {% for p in valid_pages %}
+                    {% assign p_parts = p.path | split: '/' %}
+                    {% if p_parts.size > 1 %}
+                        {% assign p_group = p_parts | first | capitalize %}
                     {% else %}
-                        {% assign active_class = "" %}
+                        {% assign p_group = "General" %}
                     {% endif %}
 
-                    <li>
-                        <a href="{{ p.url | relative_url }}" class="{{ active_class }}">
-                            {{ p.title }}
-                        </a>
-                    </li>
+                    {% if p_group == current_group %}
+                        {% if page.url == p.url %}
+                            {% assign active_class = "active" %}
+                        {% else %}
+                            {% assign active_class = "" %}
+                        {% endif %}
+                        <li>
+                            <a href="{{ p.url | relative_url }}" class="{{ active_class }}">
+                                {{ p.title }}
+                            </a>
+                        </li>
+                    {% endif %}
                 {% endfor %}
                 </ul>
             </li>
