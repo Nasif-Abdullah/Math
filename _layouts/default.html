@@ -35,9 +35,39 @@
         .sidebar a:hover { text-decoration: underline; }
         .sidebar a.active { font-weight: bold; color: #111; }
 
+        /* --- Collapsible Sidebar Styles --- */
+        .folder-title {
+            font-weight: bold; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px; 
+            margin-bottom: 5px; 
+            color: #666;
+            cursor: pointer;
+            user-select: none;
+        }
+        /* Caret icon indicator */
+        .folder-title::after {
+            content: '▸';
+            font-size: 0.8rem;
+            transition: transform 0.2s ease;
+        }
+        /* When the folder is open, rotate the arrow and show the nested list */
+        .sidebar-folder.open .folder-title::after {
+            transform: rotate(90deg);
+        }
+        .sidebar-folder .nested-list {
+            display: none;
+            padding-left: 10px;
+        }
+        .sidebar-folder.open .nested-list {
+            display: block;
+        }
+
         /* Main Content Styling */
         .main-content {
-            margin-left: 250px; /* Matches sidebar width */
+            margin-left: 250px; 
             padding: 40px;
             max-width: 800px;
             width: 100%;
@@ -65,15 +95,11 @@
 </head>
 <body>
 
-   <nav class="sidebar">
+<nav class="sidebar">
     <h2><a href="{{ '/' | relative_url }}" style="color: inherit;">Math Notes</a></h2>
     <ul>
-        {% comment %} 1. Filter out pages without titles or 404 pages {% endcomment %}
         {% assign valid_pages = site.pages | where_exp: "item", "item.title != nil" | where_exp: "item", "item.url != '/404.html'" | sort: "path" %}
-        {% comment %} 2. Group purely by the first part of the path block {% endcomment %}
-        {% assign grouped_pages = valid_pages | group_by_exp: "item", "item.path" %}
 
-        {% comment %} Let's group manually or handle formatting dynamically below {% endcomment %}
         {% assign group_names = "" %}
         {% for item in valid_pages %}
             {% assign parts = item.path | split: '/' %}
@@ -88,15 +114,27 @@
         {% endfor %}
         {% assign unique_groups = group_names | split: ":::" | sort %}
 
-        {% comment %} Loop through each distinct directory group found {% endcomment %}
         {% for current_group in unique_groups %}
             {% if current_group == "" %}{% continue %}{% endif %}
-            <li class="sidebar-folder">
-                <span class="folder-title" style="font-weight: bold; display: block; margin-top: 15px; margin-bottom: 5px; color: #666;">
+            
+            {% comment %} 
+               Determine if this folder contains the active page so we can automatically keep it open.
+            {% endcomment %}
+            {% assign is_folder_active = false %}
+            {% for p in valid_pages %}
+                {% assign p_parts = p.path | split: '/' %}
+                {% if p_parts.size > 1 %}{% assign p_group = p_parts | first | capitalize %}{% else %}{% assign p_group = "General" %}{% endif %}
+                {% if p_group == current_group and page.url == p.url %}
+                    {% assign is_folder_active = true %}
+                {% endif %}
+            {% endfor %}
+
+            <li class="sidebar-folder {% if is_folder_active %}open{% endif %}">
+                <span class="folder-title">
                     {{ current_group }}
                 </span>
                 
-                <ul>
+                <ul class="nested-list">
                 {% for p in valid_pages %}
                     {% assign p_parts = p.path | split: '/' %}
                     {% if p_parts.size > 1 %}
@@ -123,9 +161,24 @@
         {% endfor %}
     </ul>
 </nav>
-    <main class="main-content">
-        {{ content }}
-    </main>
+
+<main class="main-content">
+    {{ content }}
+</main>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const folderTitles = document.querySelectorAll(".folder-title");
+        
+        folderTitles.forEach(title => {
+            title.addEventListener("click", function() {
+                // Toggle the 'open' class on the parent <li> element
+                const parentFolder = this.parentElement;
+                parentFolder.classList.toggle("open");
+            });
+        });
+    });
+</script>
 
 </body>
 </html>
