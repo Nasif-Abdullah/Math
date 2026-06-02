@@ -9,10 +9,5 @@ A binary relation on a set $$A$$ is a way of defining an universal connection wi
 
 - <b>Reflexive:</b> Every element is related to itself ($$aRa$$)
 - <b>Symmetric:</b> If $$a$$ is related to $$b$$, then $$b$$ is related to $$a$$ ($$aRb \rightarrow bRa$$)
-- <b>Antisymmetric:</b> $$aRb \wedge bRa \leftarrow a = b$$
-- <b>Transitive:</b> $$aRb \wedge bRa \leftarrow aRc$$
-
-### Construction
-Our universe begins with the empty set, $$\emptyset$$. 
-
-$\blacksquare$
+- <b>Antisymmetric:</b> $$aRb \wedge bRa \rightarrow a = b$$
+- <b>Transitive:</b> $$aRb \wedge bRa \rightarrow aRc$$
