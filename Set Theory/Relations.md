@@ -35,3 +35,11 @@ Example: The divides relation ($$a \mid b$$) on integers. $$2 \le 6$$ and $$3 \l
 
 ### Posets
 Posets are sets that have a relation R defined on themm, and they need not to be comparable. Hasse diagrams exist to visually represent finite posets.
+
+## Total Order
+
+Total order is similar to partial orders but with one rule, every element is comparable. So, the trichotomy property is introduced-
+
+-<b>Trichotomy:</b> $$(\forall x,y \in A) \; (x \le y) \lor (x \ge y) \lor (x = y)$$ (By the way, $$x = y$$ is a "diagonal" equivalence relation).
+
+Example: The standard less than or equal to relation ($$\le$$). For any two reals the trichotomy, and other ordering properties hold.
