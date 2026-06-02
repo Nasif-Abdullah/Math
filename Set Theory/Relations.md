@@ -10,7 +10,7 @@ A binary relation on a set $$A$$ is a way of defining an universal connection wi
 - <b>Reflexive:</b> Every element is related to itself ($$aRa$$)
 - <b>Symmetric:</b> If $$a$$ is related to $$b$$, then $$b$$ is related to $$a$$ ($$aRb \rightarrow bRa$$)
 - <b>Antisymmetric:</b> $$aRb \wedge bRa \rightarrow a = b$$
-- <b>Transitive:</b> $$aRb \wedge bRa \rightarrow aRc$$
+- <b>Transitive:</b> $$aRb \wedge bRc \rightarrow aRc$$
 
 ## Equivalence Relations 
 
@@ -53,4 +53,12 @@ Dropping the antisymmetric property, i.e. elements aren't identical.
 ## Lattices
 
 Lattices are a fundamental construct of Order theory. A lattice is a special type of poset where every pairs have a unique 
-![Lattice and non-lattice Hasse Diagram](https://tikzcd.yichuanshen.de/#N4Igdg9gJgpgziAXAbVABwnAlgFyxMJZARgBoAGAXVJADcBDAGwFcYkQAdDgIxgHMsYYADMsfZgCcYAX2QALHNzSUOYLgGMYYHDAmC+qrrwFC8AawBeaLOpySZyOOqYwAvMQB0AVlIACGLS6AJ6+kLAA9B5wOEGMbsDqWBLqcX5QEvQA7n6ijIyu3Iz06mZ+gmC6vnAwaO7eaDjSlCDSpOiYuPiEKOQU1HRMrOxG-ILAThBoDowQzoy+3BDMYFD6CxAAHq5FOHiaza3t2HgERL1UNAwsbIicqtAwvgAU5ACUvvQ4z+fvyEW8+QBEEyiAAJORQZRfMBpABuVS+RFIxEI5FIrhhR5PDbvT7PAC0ZGIv3+MHycWEODBG0h0LhqLRvgxD2eQVxXxepGJiL+9ABrmEEgIVNBQVpMPhYEZKPusGeFnZzyJ718vP5ej4CjBFnF9Kl0oZaOZcuxbI+HMJpAATCS+WTtjBKdSxVCJYbkcasRsFebvtaVWr7YLhdSda69dKmbKsUEfXinmQbTzSfkNVrRWG6ZLI+70dGlYrOQBmW38vkQQJg4i62EtNogDDHLpnPqXQY3O7pLLfd74-HPHGwqNdzI93x91mvIdcEdjidPBXZg0cWfY3v901T4cZUdr8cb71T3My1dm+cbNnTlc7yf71mL4-b7sL9cDxdP3c++exo-6xkzm9NzvBMtwA59D2A4kr1PL8Nygusjk6U4elbAZrmGaNkBHVxIAqHIsDyHCCBgPwgUyVxyG8dQAFtfAgYRfCoaEAEk4A+XwABlPj2GQlxlLQoHGdRJhkBCGw6E5umQc5+iuIZbhGEwhJE2Q4DkLBKVcYAngAFgoV4mjExskKkmS23QhT8yeehC3xSiAHYfEorxS3tMiwXoGtH09Z5uELBynO8AMUwKMlgTBbgvL-I1oo9Kz1FsgL-SRQN8nLStQXUKKcysqB-I8RzkpSkL0pgMEoBrIyJObFCLjQ+TO0AmzgISvijWvZ9mvnPK2ri1c-Ja38cv618nh6qqm2Q6TULkjtPSwnciLw3xcnyXCYCheNejsoLoQAOQgL56E47ibF4w0uAE5SpmkQw1A4K7zCsGw7CkW77ucBoumAAAJeg4GqXwABEsHoPgMmotjhOotB6D0MA+HYnYeKqHAJGYWx7F8HAIHY3D8WRs7UfRzGpA8d6uBTEQxEQOR-uqAB9VYwYhuAKYelZqfEN6Wn6GAoD4eAiEoaQgA)
+```mermaid
+graph BT
+    1 --> 2
+    1 --> 3
+    2 --> 4
+    2 --> 6
+    3 --> 6
+    4 --> 12
+    6 --> 12
