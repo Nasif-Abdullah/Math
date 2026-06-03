@@ -187,25 +187,24 @@
             });
         });
 
-        // --- 2. MERMAID PARSING LOGIC FOR WEBVIEWS ---
-        // Find markdown-rendered code blocks and clean them up
         const codeBlocks = document.querySelectorAll("pre code.language-mermaid");
-        codeBlocks.forEach(codeBlock => {
-            const preBlock = codeBlock.parentElement;
-            const mermaidDiv = document.createElement("div");
-            mermaidDiv.className = "mermaid";
-            
-            // Clean up the text content (removing accidental backticks if any)
-            let rawText = codeBlock.textContent.replace(/```mermaid\n?|```/g, "").trim();
-            mermaidDiv.textContent = rawText;
-            
-            // Replace the <pre> block entirely with our new element
-            preBlock.parentNode.replaceChild(mermaidDiv, preBlock);
-        });
 
-        // Tell Mermaid to run over our processed elements
-        mermaid.contentLoaded();
-    });
+codeBlocks.forEach(codeBlock => {
+    const preBlock = codeBlock.parentElement;
+    const mermaidDiv = document.createElement("div");
+    mermaidDiv.className = "mermaid";
+    
+    // The browser has already stripped the backticks, 
+    // so we just grab the raw text content safely.
+    mermaidDiv.textContent = codeBlock.textContent.trim();
+    
+    // Replace the <pre> block entirely with our new element
+    preBlock.parentNode.replaceChild(mermaidDiv, preBlock);
+});
+
+// Initialize mermaid after replacing the elements
+mermaid.initialize({ startOnLoad: false });
+mermaid.run();
 </script>
 </body>
 </html>
