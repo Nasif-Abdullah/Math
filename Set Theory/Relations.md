@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Order Theory- Introduction
-render_with_liquid: false
 ---
 
 This is a rigorous definition to relations, we often encounter such relations like greater than, equals to etc. This branch of mathematics deal with comparing things, grouping things, and putting things in a specific sequence.                                                                            
@@ -62,7 +61,7 @@ The Diagrams we've added contains a classical Boolean Lattice, representing the 
 
 First we have to show the power sets of a three element set, $${x,y,z}$$ can be expressed as a poset with an ordering relation (here, $$\subseteq$$).
 
-The power set of the three-element set can be written as $$P = {{x}, {y}, {z}, {x,y}, {y,z}, {z,x}, {x,y,z}}$$.
+The power set of the three-element set can be written as {% raw %}$$P = {{x}, {y}, {z}, {x,y}, {y,z}, {z,x}, {x,y,z}}$$.{% endraw %}
 
 Here, $$R$$ is defined between two elements of $$P$$, $$a, b$$ when $$a \subseteq b \lor b \subseteq a$$. If any two elements can not be expressed in an containment relation, the two elements are incomparable.
 
