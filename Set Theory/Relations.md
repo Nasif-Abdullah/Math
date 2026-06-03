@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Order Theory- Introduction
+render_with_liquid: false
 ---
 
 This is a rigorous definition to relations, we often encounter such relations like greater than, equals to etc. This branch of mathematics deal with comparing things, grouping things, and putting things in a specific sequence.                                                                            
