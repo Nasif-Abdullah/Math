@@ -92,16 +92,7 @@
         };
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>
-        // Initialize Mermaid but prevent it from running automatically on page load
-        // This stops it from breaking if elements haven't finished compiling yet
-        mermaid.initialize({ 
-            startOnLoad: false,
-            theme: 'default',
-            securityLevel: 'loose'
-        });
-    </script>
+
 </head>
 <body>
 
@@ -186,25 +177,6 @@
                 parentFolder.classList.toggle("open");
             });
         });
-
-        const codeBlocks = document.querySelectorAll("pre code.language-mermaid");
-
-codeBlocks.forEach(codeBlock => {
-    const preBlock = codeBlock.parentElement;
-    const mermaidDiv = document.createElement("div");
-    mermaidDiv.className = "mermaid";
-    
-    // The browser has already stripped the backticks, 
-    // so we just grab the raw text content safely.
-    mermaidDiv.textContent = codeBlock.textContent.trim();
-    
-    // Replace the <pre> block entirely with our new element
-    preBlock.parentNode.replaceChild(mermaidDiv, preBlock);
-});
-
-// Initialize mermaid after replacing the elements
-mermaid.initialize({ startOnLoad: false });
-mermaid.run();
 </script>
 </body>
 </html>
