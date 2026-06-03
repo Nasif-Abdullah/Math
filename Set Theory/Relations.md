@@ -20,7 +20,7 @@ Can be explained as grouping, an equivalence relation clusters elements that "sh
 - <b>Symmetric:</b> $$a \sim b \rightarrow b \sim a$$
 - <b>Transitive:</b> $$a \sim b \wedge b \sim c \rightarrow a \sim c$$
 
-A very classic example of such equivalence relation is modular arithmetic, where, say, 1 o clock is similar to 13 o clock, where $$13 \equiv 1 \pmod{12}$$. We will discuss modular arithmetic in number theory elaborately.
+A very classic example of such equivalence relation is modular arithmetic, where, say, 1 o clock is similar to 13 o clock, where $$13 \equiv 1 \pmod\{12\}$$. We will discuss modular arithmetic in number theory elaborately.
 
 ## Partial Order
 
@@ -54,19 +54,19 @@ Dropping the antisymmetric property, i.e. elements aren't identical.
 
 Lattices are a fundamental construct of Order theory. A lattice is a special type of poset where every pairs have a unique highest common "floor" and a lowest common "ceiling". 
 ![Lattice Diagram](https://kroki.io/tikz/svg/eNqtVd9v2kAMfuev8ANIRQqM0KFJqXigP7ZV6tg09Q1Qdbkc4dSQiy4HJYn43-dLLmlI6NjDkCIutj_789mOl56guy0LFQ1IHGdEKk4DduwsdzGLCH0lPssUf03bksG1FwVCFQotCLgriUyySMRccRHy0G8rt0RtTnwtCFV8zyzF_Y2KULDKIsn2nL2h2a_i9BDuuRShppmHjjhVO6lZovOAhb7alKa3QnpMZqOhPZ5ESK7X6cFXHjAIyZY5sMEk2UtAFDsM8el0li7zeZiVt3CsJGvu6xCLjXKjVWdJUckkplTq6zwWMSUBm9rDiQVsz2QCofDYp2GsEhRnlEu8Uws8Sd4sWPMgmLoBZm8BD0MmAe9CY5HuqtMB_PV6Pbh_nH37PfsBtgMzeJo9Pz_ePcDV7cs13O1c1tc2ua2hE1MRIZFAIBNwxS70kCseDlNMFmvKVrl17h3myC6u3peaLFyN-kAU_ll4WATEZciSBeLN6Y66K8iONxWgiTwUyIFt2RU0YGvldA8NpAEkZSi0LwHEFXsGUneB003O49ICZ9dxBpFe4phUJMdNkh9EO6QlzXGTpgGmH6RX8Ry3eCaXiNpl0Ov-SUynaxtkrZAPnl8vpG6wvJCDga7KTUOStCRp_6aJPhh0zbgUnbFO2tZGlJyxTt8dNUTnrA_Gk11jkrZEybuofac9uCOR_hZB3sqgNjyGOGKUrzkFjxNfku1pBRba7TQUITOjWhxz_HQ0nNAtiDWMsBSPMRB4KqbLFHTJQs-MYnuSxw7Mfz7Xpvn8CMcbvlbT7OozDuLx4tQS09aj4ZeJhfSas0vOt6hruqxCNWDuhS6l9bC6yxu9Ss-H9Wphc1QD5v1ji5Oi5rTdNEbjtTXuhxi3jfnvHbQyUz3IbzubC_X35slfTncdLYhk3_UOg_sidAxUbCOiNxM6NN96iJXc5TBQAsVIYNBSDdFlfvl61TnFYjT5xMcivtmBhk21I_8AXWJlyQ==)
-Formally, a poset is a lattice when every pair of elements ${x,y}$ has-
+Formally, a poset is a lattice when every pair of elements $\{x,y\}$ has-
 - **A least Upper Bound**: Also called the supremum, or join, written as $$a \lor b$$
 - **A Greatest Lower Bound**: Also called the infimum, or meet, written as $$a \wedge b$$.
 The Diagrams we've added contains a classical Boolean Lattice, representing the power set of a three element set.
 
-First we have to show the power sets of a three element set, $${x,y,z}$$ can be expressed as a poset with an ordering relation (here, $$\subseteq$$).
+First we have to show the power sets of a three element set, $$\{x,y,z\}$$ can be expressed as a poset with an ordering relation (here, $$\subseteq$$).
 
-The power set of the three-element set can be written as {% raw %}$$P = {{x}, {y}, {z}, {x,y}, {y,z}, {z,x}, {x,y,z}}$$.{% endraw %}
+The power set of the three-element set can be written as $$P = \{\{x\}, \{y\}, \{z\}, \{x,y\}, \{y,z\}, \{z,x\}, \{x,y,z\}\}$$.
 
-Here, $$R$$ is defined between two elements of $$P$$, $$a, b$$ when $$a \subseteq b \lor b \subseteq a$$. If any two elements can not be expressed in an containment relation, the two elements are incomparable.
+Here, $$R$$ is defined between two elements of $$P$$, $$a, b$$ when ($$a \subseteq b) \lor (b \subseteq a$$). If any two elements can not be expressed in an containment relation, the two elements are incomparable.
 
-$$\forall a \in P, a \subseteq a$$, $${x} \subseteq {x,y} \wedge {x,y} \subseteq {x,y,z} \rightarrow {x} \subseteq {x,y,z}$$, and for any three elements that can be put in such relations, this holds without loss of generality, and $${x,y} \subseteq {x,y} ^ {x,y} \subseteq {x,y} \rightarrow {x,y} = {x,y}$$, so the power set with the order $$\subseteq$$ defined in it is a poset.
+$$(\forall a \in P), (a \subseteq a)$$, $$(\{x\} \subseteq \{x,y\}) \wedge (\{x,y\} \subseteq \{x,y,z\}) \rightarrow (\{x\} \subseteq \{x,y,z\})$$, and for any three elements that can be put in such relations, this holds without loss of generality, and $$(\{x,y\} \subseteq \{x,y\}) \lor (\{x,y\} \subseteq \{x,y\}) \rightarrow \{x,y\} = \{x,y\}$$, so the power set with the order $$\subseteq$$ defined in it is a poset.
 
-Now, we construct the hasse diagram with the following conditions, if $$aRb$$ (here, if $$a \subseteq b, a,b \in P$$), b is placed above a, if $aRc \wedge cRb$$, we don't "cover" a and b, we draw a line from a to c and from c to a, and we don't draw reflexive diagrams ($$aRa$$).
+Now, we construct the hasse diagram with the following conditions, if $$aRb$$ (here, if $$a \subseteq b, a,b \in P$$), b is placed above a, if $$aRc \wedge cRb$$, we don't "cover" a and b, we draw a line from a to c and from c to a, and we don't draw reflexive diagrams ($$aRa$$).
 
 In the diagram (left diagram attached) we find every pair of elements have an element on top of them shared by both, connected with a single line. If more than one such elements exist, the element which sits lowest to the rest gets called the supremum, and the definition follows for the infimum.
