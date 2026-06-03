@@ -178,28 +178,26 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
+        // --- 1. COLLAPSIBLE SIDEBAR LOGIC ---
         const folderTitles = document.querySelectorAll(".folder-title");
-        
         folderTitles.forEach(title => {
             title.addEventListener("click", function() {
-                // Toggle the 'open' class on the parent <li> element
                 const parentFolder = this.parentElement;
                 parentFolder.classList.toggle("open");
             });
         });
-    });
-</script>
-<script>
-    // --- 2. MERMAID PARSING LOGIC FOR WEBVIEWS ---
-        // Most markdown engines output ```mermaid as <pre><code class="language-mermaid">
-        // We look for those, clean up the formatting, and convert them to <div class="mermaid"> 
-        // so Mermaid can cleanly render them.
+
+        // --- 2. MERMAID PARSING LOGIC FOR WEBVIEWS ---
+        // Find markdown-rendered code blocks and clean them up
         const codeBlocks = document.querySelectorAll("pre code.language-mermaid");
         codeBlocks.forEach(codeBlock => {
             const preBlock = codeBlock.parentElement;
             const mermaidDiv = document.createElement("div");
             mermaidDiv.className = "mermaid";
-            mermaidDiv.textContent = codeBlock.textContent;
+            
+            // Clean up the text content (removing accidental backticks if any)
+            let rawText = codeBlock.textContent.replace(/```mermaid\n?|```/g, "").trim();
+            mermaidDiv.textContent = rawText;
             
             // Replace the <pre> block entirely with our new element
             preBlock.parentNode.replaceChild(mermaidDiv, preBlock);
