@@ -53,12 +53,4 @@ Dropping the antisymmetric property, i.e. elements aren't identical.
 ## Lattices
 
 Lattices are a fundamental construct of Order theory. A lattice is a special type of poset where every pairs have a unique 
-```mermaid
-graph BT
-    1 --> 2
-    1 --> 3
-    2 --> 4
-    2 --> 6
-    3 --> 6
-    4 --> 12
-    6 --> 12
+![Lattice Diagram](https://kroki.io/tikz/svg/eNqtVd9v2kAMfuev8ANIRQqM0KFJqXigP7ZV6tg09Q1Qdbkc4dSQiy4HJYn43-dLLmlI6NjDkCIutj_789mOl56guy0LFQ1IHGdEKk4DduwsdzGLCH0lPssUf03bksG1FwVCFQotCLgriUyySMRccRHy0G8rt0RtTnwtCFV8zyzF_Y2KULDKIsn2nL2h2a_i9BDuuRShppmHjjhVO6lZovOAhb7alKa3QnpMZqOhPZ5ESK7X6cFXHjAIyZY5sMEk2UtAFDsM8el0li7zeZiVt3CsJGvu6xCLjXKjVWdJUckkplTq6zwWMSUBm9rDiQVsz2QCofDYp2GsEhRnlEu8Uws8Sd4sWPMgmLoBZm8BD0MmAe9CY5HuqtMB_PV6Pbh_nH37PfsBtgMzeJo9Pz_ePcDV7cs13O1c1tc2ua2hE1MRIZFAIBNwxS70kCseDlNMFmvKVrl17h3myC6u3peaLFyN-kAU_ll4WATEZciSBeLN6Y66K8iONxWgiTwUyIFt2RU0YGvldA8NpAEkZSi0LwHEFXsGUneB003O49ICZ9dxBpFe4phUJMdNkh9EO6QlzXGTpgGmH6RX8Ry3eCaXiNpl0Ov-SUynaxtkrZAPnl8vpG6wvJCDga7KTUOStCRp_6aJPhh0zbgUnbFO2tZGlJyxTt8dNUTnrA_Gk11jkrZEybuofac9uCOR_hZB3sqgNjyGOGKUrzkFjxNfku1pBRba7TQUITOjWhxz_HQ0nNAtiDWMsBSPMRB4KqbLFHTJQs-MYnuSxw7Mfz7Xpvn8CMcbvlbT7OozDuLx4tQS09aj4ZeJhfSas0vOt6hruqxCNWDuhS6l9bC6yxu9Ss-H9Wphc1QD5v1ji5Oi5rTdNEbjtTXuhxi3jfnvHbQyUz3IbzubC_X35slfTncdLYhk3_UOg_sidAxUbCOiNxM6NN96iJXc5TBQAsVIYNBSDdFlfvl61TnFYjT5xMcivtmBhk21I_8AXWJlyQ==)
