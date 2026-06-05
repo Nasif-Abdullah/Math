@@ -21,6 +21,6 @@ Now, set any $$p \in A$$, i.e. $$(p^2 < 2) \rightarrow (p^2 -2 <0)$$. We have fr
 
 As $$p,q$$ both are rational numbers, and we are bound in a rational "field", we can say $$\sqrt{2} \notin \mathbb{q}$$. 
 
-For keeping the discussion tidy, we'll talk about how the equation $$(i)$$ came to be in <a href = "../Appendix/Newton's_method.html">an appendix note.</a>
+<div id = "i">For keeping the discussion tidy, we'll talk about how the equation $$(i)$$ came to be in <a href = "../Appendix/Newton's_method.html">an appendix note.</a></div>
 
 $\blacksquare$
