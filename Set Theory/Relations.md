@@ -14,7 +14,7 @@ A binary relation on a set $$A$$ is a way of defining an universal connection wi
 
 ## Equivalence Relations 
 
-Can be explained as grouping, an equivalence relation clusters elements that "share a common trait". An equivalence relation, $$a \sim b$$, similarly, satisfies the following relations-
+Can be explained as grouping, an equivalence relation clusters elements that "share a common trait". An equivalence relation, ($$a \sim b$$), similarly, satisfies the following relations-
 
 - <b>Reflexive:</b> $$a \sim a$$
 - <b>Symmetric:</b> $$a \sim b \rightarrow b \sim a$$
@@ -40,7 +40,7 @@ Posets are sets that have a relation R defined on them, and they need not to be 
 
 Total order is similar to partial orders but with one rule, every element is comparable. So, the trichotomy property is introduced-
 
- - <b>Trichotomy:</b> $$(\forall x,y \in A) \; (x \le y) \lor (x \ge y) \lor (x = y)$$ (By the way, $$x = y$$ is a "diagonal" equivalence relation).
+ - <b>Trichotomy:</b> $$(\forall x,y \in A) \; (x \le y) \lor (y \le x) \lor (x = y)$$ (By the way, $$x = y$$ is a "diagonal" equivalence relation).
 
 Example: The standard less than or equal to relation ($$\le$$). For any two reals the trichotomy, and other ordering properties hold.
 
