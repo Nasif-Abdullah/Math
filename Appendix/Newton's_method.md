@@ -15,11 +15,11 @@ $$ x_{n + 1} = x_n - \frac{f(x_n)}{f^{i} (x_n)} $$
 
 This method was used to find the q from the <a href = "../Real Analysis/Introduction.html#i">analysis note</a>, and we'll discuss how now-
 
-We desire to find the solution to the equation- $$p^2 - 2 = 0$$. As it's in the form of $$f(p) = 0$$, we can use newton's method. We calculate the derivative, for $$f(p) = p^2, f^{i} (p) = 2p$$
+We desire to find the solution to the equation- $$p^2 - 2 = 0$$. As it's in the form of $$f(p) = 0$$, we can use newton's method. We calculate the derivative, for $$f(p) = p^2 - 2, f^{i} (p) = 2p$$
 
 and from that, we have, $$q = p_{n + 1}$$ (and set $$p_n = p$$) and
 
-$$ q = p - \frac{p^2}{2p} $$.
+$$q = p - \frac{p^2 - 2}{2p}$$.
 
 We simplify the expression to get-
 
@@ -31,9 +31,9 @@ Notice, the numerator, $$(p^2 - 2)^2$$ is squared, so it's always positive, so $
 
 So we modify the equation- for the value of q is disproportionate to the value of it's expression's denominator.
 
-Now we replace the denominator $$2p$$ by some $$p + k$$ in the expression- $$ q = p - \frac{p^2}{2p} $$.
+Now we replace the denominator $$2p$$ by some $$p + k$$ in the expression- $$ q = p - \frac{p^2 - 2}{2p} $$.
 
-We get- $$ q = p - \frac{p^2}{p + k} $$.
+We get- $$ q = p - \frac{p^2 - 2}{p + k} $$.
 
 Now setting $$k = 2$$ produces the equation used in the analysis note.
 
