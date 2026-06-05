@@ -27,7 +27,7 @@ $$q = \frac{p}{2} + \frac{1}{p}$$
 
 And we have, $$q^2 - 2 = \frac{(p^2 - 2)^2}{4 p^2}$$
 
-Notice, the numerator, $$(p^2 - 2)^2$$ is squared, so it's always positive, so $$q^2$$ is always greater than $$0$$. So we couldn't find a $$q$$ such that $$(p^2 < 2) \rightarrow (q^2 < 2) \wedge (q > p)$$, i.e. the equation from newton's method to find q oversteps or understeps when p is in A and B, respectiely. (Recall, $$A = \{p \in \mathbb{Q} : p^2 < 2 \}$$ and $$B = \{p \in \mathbb{Q} : p^2 > 2 \}$$) 
+Notice, the numerator, $$(p^2 - 2)^2$$ is squared, so it's always positive, so $$q^2$$ is always greater than $$0$$. So we couldn't find a $$q$$ such that $$(p^2 < 2) \rightarrow (q^2 < 2) \wedge (q > p)$$, i.e. the equation from newton's method to find q oversteps or understeps when p is in A and B, respectiely. (Recall, $$A = \{p \in \mathbb{Q} \mid p^2 < 2 \}$$ and $$B = \{p \in \mathbb{Q} \mid p^2 > 2 \}$$) 
 
 So we modify the equation- for the value of q is disproportionate to the value of it's expression's denominator.
 
