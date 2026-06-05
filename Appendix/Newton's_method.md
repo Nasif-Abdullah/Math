@@ -11,5 +11,5 @@ So we have, $$y - f(x_n) = f^{'} (x_n) (x - x_n)$$, being the equation of the ta
 
 and from algebraic manipulation we have- 
 
-$ x_{n + 1} = x_n - \frac{f(x_n)}{f^{'} (x_n)} $
+$$ x_{n + 1} = x_n - \frac{f(x_n)}{f^{'} (x_n)} $$
 
