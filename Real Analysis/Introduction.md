@@ -7,7 +7,7 @@ As it will be discussed gradually, real numbers are of great importance, as they
 
 $$\sqrt{2}$$ is the solution to the equation, $$q^2 = 2$$. Notice the following sequence- $$\{1, 1.4, 1.41, 1.414, 1.4142,...\}$$ 
 
-The sequence is built on rational numbers, which we have constructed, recall, rational numbers $$\mathbb{Q}$$ are numbers that can be represented by $$\frac{m}{n}\ \(m,n \in \mathbb{Z})$$. For example, $$1.41 = \frac{141}{100}$$.
+The sequence is built on rational numbers, which we have constructed, recall, rational numbers $$\mathbb{Q}$$ are numbers that can be represented by $$\frac{m}{n}\ \ (m,n \in \mathbb{Z})$$. For example, $$1.41 = \frac{141}{100}$$.
 
 The sequence converges to $$\sqrt{2}$$ but, as we haven't constructed irrational numbers, we can't understand to which object this sequence converges to.
 
