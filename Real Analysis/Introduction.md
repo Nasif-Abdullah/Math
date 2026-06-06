@@ -23,4 +23,19 @@ As $$p,q$$ both are rational numbers, and we are bound in a rational "field", we
 
 For keeping the discussion tidy, we'll talk about how the equation $$(i)$$ came to be in <a href = "../Appendix/Newton's_method.html" id = "i">an appendix note.</a>
 
+There's a classical proof to find $$\sqrt{2}$$ is not rational (irrational), but we will deal with it in the problem sets.
+
+It is assumed that the reader is introduced to <a href = "../Set Theory/Relations.html"> Order Theory</a>, and <a href = 
+"../Set Theory/Naive.html">basic set theory.</a>
+
+A set $$S$$ is ordered when we have an order defined on it, preferably, a total order. For example, $$Q$$ is an ordered set, with the order $$<$$ defined in it. All elements are comparable to each other.
+
+### Bound
+
+Suppose $$S$$ is an ordered set, and $$E \subset S$$. If $$\exists B \in S$$ such that $$(\forall x \in E) \ \ x \le B$$ we say $$E$$ is bounded above, and call $$B$$ is an upper bound of E.
+
+Note, $$B$$ is in the "parent set", $$S$$, so the upper bound can exist outside of the subset we are dealing with.
+
+Similarly, $$L$$ is a lower bound when $$(\forall x \in E)\ \(\exists L \in S) x \ge L$$
+
 $\blacksquare$
