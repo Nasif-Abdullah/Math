@@ -31,7 +31,7 @@
         .sidebar h2 { font-size: 1.2rem; margin-top: 0; color: #555; }
         .sidebar ul { list-style: none; padding: 0; margin: 0; }
         .sidebar li { margin-bottom: 10px; }
-        .sidebar a { color: #0066cc; text-decoration: none; }
+        .sidebar a { color: #0066cc; text-decoration: none; display: block; }
         .sidebar a:hover { text-decoration: underline; }
         .sidebar a.active { font-weight: bold; color: #111; }
 
@@ -43,26 +43,44 @@
             align-items: center;
             margin-top: 15px; 
             margin-bottom: 5px; 
-            color: #666;
+            color: #444;
             cursor: pointer;
             user-select: none;
         }
+        
+        /* Subfolder specific styling */
+        .sub-folder-title {
+            font-size: 0.95em;
+            color: #777;
+            margin-top: 5px;
+        }
+
         /* Caret icon indicator */
         .folder-title::after {
             content: '▸';
             font-size: 0.8rem;
             transition: transform 0.2s ease;
         }
-        /* When the folder is open, rotate the arrow and show the nested list */
-        .sidebar-folder.open .folder-title::after {
+        /* When the folder is open, rotate the arrow */
+        .sidebar-folder.open > .folder-title::after {
             transform: rotate(90deg);
         }
+        
+        /* Nested Lists */
         .sidebar-folder .nested-list {
             display: none;
             padding-left: 10px;
         }
-        .sidebar-folder.open .nested-list {
+        .sidebar-folder.open > .nested-list {
             display: block;
+        }
+        
+        /* Indent styling for sub-folders to make hierarchy clear */
+        .nested-list .nested-list {
+            padding-left: 15px;
+            border-left: 1px dashed #ccc;
+            margin-left: 5px;
+            margin-top: 5px;
         }
 
         /* Main Content Styling */
@@ -101,62 +119,85 @@
     <ul>
         {% assign valid_pages = site.pages | where_exp: "item", "item.title != nil" | where_exp: "item", "item.url != '/404.html'" | sort: "path" %}
 
-        {% assign group_names = "" %}
+        {% assign top_groups = "" %}
         {% for item in valid_pages %}
             {% assign parts = item.path | split: '/' %}
             {% if parts.size > 1 %}
-                {% assign group_name = parts | first | capitalize %}
+                {% assign top_group = parts[0] %}
             {% else %}
-                {% assign group_name = "General" %}
+                {% assign top_group = "General" %}
             {% endif %}
-            {% unless group_names contains group_name %}
-                {% assign group_names = group_names | append: group_name | append: ":::" %}
+            
+            {% assign check_str = ":::" | append: top_group | append: ":::" %}
+            {% assign current_top_groups = ":::" | append: top_groups %}
+            {% unless current_top_groups contains check_str %}
+                {% assign top_groups = top_groups | append: top_group | append: ":::" %}
             {% endunless %}
         {% endfor %}
-        {% assign unique_groups = group_names | split: ":::" | sort %}
+        {% assign unique_top_groups = top_groups | split: ":::" | sort %}
 
-        {% for current_group in unique_groups %}
-            {% if current_group == "" %}{% continue %}{% endif %}
+        {% for top_group in unique_top_groups %}
+            {% if top_group == "" %}{% continue %}{% endif %}
             
-            {% comment %} 
-               Determine if this folder contains the active page so we can automatically keep it open.
-            {% endcomment %}
-            {% assign is_folder_active = false %}
-            {% for p in valid_pages %}
-                {% assign p_parts = p.path | split: '/' %}
-                {% if p_parts.size > 1 %}{% assign p_group = p_parts | first | capitalize %}{% else %}{% assign p_group = "General" %}{% endif %}
-                {% if p_group == current_group and page.url == p.url %}
-                    {% assign is_folder_active = true %}
-                {% endif %}
-            {% endfor %}
-
-            <li class="sidebar-folder {% if is_folder_active %}open{% endif %}">
+            <li class="sidebar-folder">
                 <span class="folder-title">
-                    {{ current_group }}
+                    {{ top_group | capitalize | replace: "-", " " }}
                 </span>
                 
                 <ul class="nested-list">
-                {% for p in valid_pages %}
-                    {% assign p_parts = p.path | split: '/' %}
-                    {% if p_parts.size > 1 %}
-                        {% assign p_group = p_parts | first | capitalize %}
-                    {% else %}
-                        {% assign p_group = "General" %}
-                    {% endif %}
-
-                    {% if p_group == current_group %}
-                        {% if page.url == p.url %}
-                            {% assign active_class = "active" %}
-                        {% else %}
-                            {% assign active_class = "" %}
+                    
+                    {% for p in valid_pages %}
+                        {% assign p_parts = p.path | split: '/' %}
+                        {% assign p_top = "General" %}
+                        {% if p_parts.size > 1 %}{% assign p_top = p_parts[0] %}{% endif %}
+                        
+                        {% if p_top == top_group and p_parts.size <= 2 %}
+                            <li>
+                                <a href="{{ p.url | relative_url }}" class="{% if page.url == p.url %}active{% endif %}">
+                                    {{ p.title }}
+                                </a>
+                            </li>
                         {% endif %}
-                        <li>
-                            <a href="{{ p.url | relative_url }}" class="{{ active_class }}">
-                                {{ p.title }}
-                            </a>
+                    {% endfor %}
+
+                    {% assign sub_groups = "" %}
+                    {% for p in valid_pages %}
+                        {% assign p_parts = p.path | split: '/' %}
+                        {% assign p_top = "General" %}
+                        {% if p_parts.size > 1 %}{% assign p_top = p_parts[0] %}{% endif %}
+                        
+                        {% if p_top == top_group and p_parts.size > 2 %}
+                            {% assign sub_group = p_parts[1] %}
+                            {% assign check_str = ":::" | append: sub_group | append: ":::" %}
+                            {% assign current_sub_groups = ":::" | append: sub_groups %}
+                            {% unless current_sub_groups contains check_str %}
+                                {% assign sub_groups = sub_groups | append: sub_group | append: ":::" %}
+                            {% endunless %}
+                        {% endif %}
+                    {% endfor %}
+                    {% assign unique_sub_groups = sub_groups | split: ":::" | sort %}
+
+                    {% for sub_group in unique_sub_groups %}
+                        {% if sub_group == "" %}{% continue %}{% endif %}
+                        <li class="sidebar-folder">
+                            <span class="folder-title sub-folder-title">
+                                {{ sub_group | capitalize | replace: "-", " " }}
+                            </span>
+                            <ul class="nested-list">
+                                {% for p in valid_pages %}
+                                    {% assign p_parts = p.path | split: '/' %}
+                                    {% if p_parts.size > 2 and p_parts[0] == top_group and p_parts[1] == sub_group %}
+                                        <li>
+                                            <a href="{{ p.url | relative_url }}" class="{% if page.url == p.url %}active{% endif %}">
+                                                {{ p.title }}
+                                            </a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
                         </li>
-                    {% endif %}
-                {% endfor %}
+                    {% endfor %}
+
                 </ul>
             </li>
         {% endfor %}
@@ -169,7 +210,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // --- 1. COLLAPSIBLE SIDEBAR LOGIC ---
+        // 1. COLLAPSIBLE SIDEBAR LOGIC
         const folderTitles = document.querySelectorAll(".folder-title");
         folderTitles.forEach(title => {
             title.addEventListener("click", function() {
@@ -177,7 +218,18 @@
                 parentFolder.classList.toggle("open");
             });
         });
-        });
+
+        // 2. AUTO-OPEN ACTIVE FOLDERS (Replaces complex Liquid active-state logic)
+        const activeLink = document.querySelector('.sidebar a.active');
+        if (activeLink) {
+            let currentElement = activeLink.closest('.sidebar-folder');
+            // Traverse up the DOM tree and open all parent folders
+            while (currentElement) {
+                currentElement.classList.add('open');
+                currentElement = currentElement.parentElement.closest('.sidebar-folder');
+            }
+        }
+    });
 </script>
 </body>
 </html>
