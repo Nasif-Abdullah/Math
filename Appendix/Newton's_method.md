@@ -19,13 +19,15 @@ We desire to find the solution to the equation- $$p^2 - 2 = 0$$. As it's in the 
 
 and from that, we have, $$q = p_{n + 1}$$ (and set $$p_n = p$$) and
 
-$$q = p - \frac{p^2 - 2}{2p}$$.
+$$q = p - \frac{p^2 - 2}{2p}$$
 
 We simplify the expression to get-
 
 $$q = \frac{p}{2} + \frac{1}{p}$$
 
-And we have, $$q^2 - 2 = \frac{(p^2 - 2)^2}{4 p^2}$$
+And we have, 
+
+$$q^2 - 2 = \frac{(p^2 - 2)^2}{4 p^2}$$
 
 Notice, the numerator, $$(p^2 - 2)^2$$ is squared, so it's always positive, so $$q^2$$ is always greater than $$0$$. So we couldn't find a $$q$$ such that $$(p^2 < 2) \rightarrow (q^2 < 2) \wedge (q > p)$$, i.e. the equation from newton's method to find q oversteps or understeps when p is in A and B, respectiely. (Recall, $$A = \{p \in \mathbb{Q} \mid p^2 < 2 \}$$ and $$B = \{p \in \mathbb{Q} \mid p^2 > 2 \}$$) 
 
