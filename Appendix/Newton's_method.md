@@ -29,13 +29,13 @@ And we have, $$q^2 - 2 = \frac{(p^2 - 2)^2}{4 p^2}$$
 
 Notice, the numerator, $$(p^2 - 2)^2$$ is squared, so it's always positive, so $$q^2$$ is always greater than $$0$$. So we couldn't find a $$q$$ such that $$(p^2 < 2) \rightarrow (q^2 < 2) \wedge (q > p)$$, i.e. the equation from newton's method to find q oversteps or understeps when p is in A and B, respectiely. (Recall, $$A = \{p \in \mathbb{Q} \mid p^2 < 2 \}$$ and $$B = \{p \in \mathbb{Q} \mid p^2 > 2 \}$$) 
 
-So we modify the equation- for the value of q is disproportionate to the value of it's expression's denominator.
+So we modify the equation by replacing the denominator $$2p$$ by some $$p + k$$ in the expression- $$ q = p - \frac{p^2 - 2}{2p}$$, so the value of $$q$$ shrinks, when $$p \in A$$.
 
-Now we replace the denominator $$2p$$ by some $$p + k$$ in the expression- $$ q = p - \frac{p^2 - 2}{2p} $$.
+Now, for $$p \in A$$. We need to show $$(q \in A) \wedge (q > p)$$, and we have $$p^2 < 2$$ so $$p < 2$$. Certainly thus, $$2p < p + 2$$, and the equation follows- 
 
-We get- $$ q = p - \frac{p^2 - 2}{p + k} $$.
+We get- $$ q = p - \frac{p^2 - 2}{p + 2} $$.
 
-Now setting $$k = 2$$ produces the equation used in the analysis note.
+Which produces the equation used in the analysis note.
 
 (It is to be noted that, if we could prove that the overstepping or understepping was bound to happen, we wouldn't have to construct reals anymore)
 
