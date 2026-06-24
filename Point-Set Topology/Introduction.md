@@ -12,5 +12,5 @@ Topology is basically like a "rule of the club" where you take any set, address 
 Take any set $$X$$ and define $$\tau = \{U \mid U \subset X \wedge \phi(U) = T\}$$ When the properties, $$\phi(U)$$, are listed below-
 
  - $$\phi(\emptyset) = T$$ and $$\phi(X) = T$$.
- - $$\phi(U_i) = T \rightarrow \phi(\bigcup U_{i}) = T$$.
+ - $$\phi(U_i) = T \rightarrow \phi(\bigcup_{i \in I} U_{i}) = T$$ (and $$I$$ is any indexing set)
  - $$\phi(U_i) = T \rightarrow \phi(\bigcap_{i=1}^{n} U_{i}) = T$$ for any $$n \in \mathbb{N}$$
