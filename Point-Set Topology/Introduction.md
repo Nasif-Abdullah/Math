@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Order Theory- Introduction to Topology
+title: Introduction to Topology
 ---
 
 In analysis we have this notion of distance, and neighborhoods building upon them that makes us define important notions like open sets, closed sets etc. We have, in real analysis, real numbers, which are complete, have "no holes" so we can define any values of distance using them.
@@ -11,4 +11,4 @@ Topology is basically like a "rule of the club" where you take any set, address 
 
 We now list the axioms of the topology- 
 
- - $$\empty$$ and $$\X$$ is in $$\tau$$.
+ - $$\emptyset$$ and $$X$$ is in $$\tau$$.
