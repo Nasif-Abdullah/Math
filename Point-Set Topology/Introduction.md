@@ -9,6 +9,8 @@ Unfortunately there exists many branches of math where one don't get the privile
 
 Topology is basically like a "rule of the club" where you take any set, address it's elements and check if these elements satisfy some conditions or axioms, which creates a topology.
 
-We now list the axioms of the topology- 
+Take any set $$X$$ and define $$\tau = \{U \mid U \subset X \and \phi(U) = T\}$$ When the properties, $$phi(U)$$, are listed below-
 
  - $$\emptyset$$ and $$X$$ is in $$\tau$$.
+ - $$\bigcup U_{i} \in \tau$$ for all $$U_i \in \tau$$.
+ - $$\bigcap_{i=1}^{n} U_{i} \in \tau$$ for all $$U_i \in \tau$$ and for any $$n \in \mathbb{N}$$
