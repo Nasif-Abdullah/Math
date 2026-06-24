@@ -11,6 +11,6 @@ Topology is basically like a "rule of the club" where you take any set, address 
 
 Take any set $$X$$ and define $$\tau = \{U \mid U \subset X \wedge \phi(U) = T\}$$ When the properties, $$\phi(U)$$, are listed below-
 
- - $$\emptyset$$ and $$X$$ is in $$\tau$$.
- - $$\bigcup U_{i} \in \tau$$ for all $$U_i \in \tau$$.
- - $$\bigcap_{i=1}^{n} U_{i} \in \tau$$ for all $$U_i \in \tau$$ and for any $$n \in \mathbb{N}$$
+ - $$\phi(\emptyset) = T$$ and $$\phi(X) = T$$.
+ - $$(U_i) \= T \leftarrow \phi(\bigcup U_{i}) = T$$.
+ - $$(U_i) \= T \leftarrow \phi(\bigcap_{i=1}^{n} U_{i}) = T$$ for any $$n \in \mathbb{N}$$
