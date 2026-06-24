@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+   <!-- Homepage -->
+   <url>
+      <loc>https://nasif-abdullah.github.io/</loc>
+      <priority>1.00</priority>
+   </url>
+   
+   <!-- Point-Set Topology -->
+   <url>
+      <loc>https://nasif-abdullah.github.io/Point-Set%20Topology/Introduction.html</loc>
+      <priority>0.80</priority>
+   </url>
+
+   <!-- Real Analysis -->
+   <url>
+      <loc>https://nasif-abdullah.github.io/Real%20Analysis/Introduction.html</loc>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://nasif-abdullah.github.io/Real%20Analysis/Real%20and%20Complex%20Numbers/Bound.html</loc>
+      <priority>0.70</priority>
+   </url>
+
+   <!-- Set Theory -->
+   <url>
+      <loc>https://nasif-abdullah.github.io/Set%20Theory/Relations.html</loc>
+      <priority>0.80</priority>
+   </url>
+   <url>
+      <loc>https://nasif-abdullah.github.io/Set%20Theory/Von-Neumann%20Universe.html</loc>
+      <priority>0.80</priority>
+   </url>
+
+   <!-- Appendix -->
+   <url>
+      <loc>https://nasif-abdullah.github.io/Appendix/Newton's_method.html</loc>
+      <priority>0.50</priority>
+   </url>
+</urlset>
