@@ -25,7 +25,7 @@ Take a set $$X$$ = $$\{a,b,c\}$$, and we take the following subsets, $$U_i \in X
 
  - $$(\phi(\{a,b,c\}) = T) \wedge (\phi(\emptyset) = T)$$ By assumption.
  - By assumption $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following unions- $$\bigcup_{i \in I} (U_i) \in \tau$$ so $$\phi(\bigcup_{i \in I} (U_i)) = T$$ (Arbitrary union of any subsets of a power set is within the power set. So every union represents a $$U_i$$ for an $$i \in I$$, but we have assumed that $$\phi(U_i) = T$$ for any $$i$$, so the union satisfies the predicate.)
- - And  $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following finite intersection- $$\bigcap_{i=1}^{n} (U_i) \in \tau$$ so $$\phi(\bigcap_{i \in I}^{n} (U_i)) = T$$ (Note, empty set is also in the collection).
+ - And  $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following finite intersection- $$\bigcap_{i=1}^{n} (U_i) \in \tau$$ so $$\phi(\bigcap_{i = 1}^{n} (U_i)) = T$$ (Note, empty set is also in the collection).
 
 So the assumption holds and the collection forms a topology on $$X$$. This is an elementary topology called the discrete topology, when the collection is the power set of a set $$X$$.
 
