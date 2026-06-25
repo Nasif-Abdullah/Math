@@ -23,9 +23,9 @@ We now begin with a simple example on what can and can't be a topology.
 
 Take a set $$X$$ = $$\{a,b,c\}$$, and we take the following subsets, $$U_i \in X$$ and the $$U_i$$'s are, in order, the following sets- $$\{a\}, \{b\}, \{c\}, \{a,b\}, \{b,c\}, \{a,c\}, \{a,b,c\}, \emptyset\$$. We assume $$\phi(U_i) = T$$ so we construct the collection, $$\tau = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{a\}, \{a,b,c\}\}$$ Now we check if it forms a topology-
 
- - $$\phi(\{a,b,c\}) = T \wedge \phi(\emptyset) = T$$ By assumption.
- - By assumption $$(\forall i \in I) \phi(U_i) = T$$ so we have the following unions- $$\bigcup_{i \in I} U_i \in \tau$$ so $$\phi(\bigcup_{i \in I} U_i) = T$$ (One can check it holds for every two or more elements)
- - And  $$(\forall i \in I) \phi(U_i) = T$$ so we have the following finite intersection- $$\bigcap_{i \in I}^{n} U_i \in \tau$$ so $$\phi(\bigcap_{i \in I}^{n} U_i) = T$$ (Note, empty set is also in the collection).
+ - $$(\phi(\{a,b,c\}) = T) \wedge (\phi(\emptyset) = T)$$ By assumption.
+ - By assumption $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following unions- $$\bigcup_{i \in I} (U_i) \in \tau$$ so $$\phi(\bigcup_{i \in I} (U_i)) = T$$ (Works because the union is in $$\tau$$ and every element of $$tau$$ satisfies the predicate by assumption. One can check it holds for every two or more elements)
+ - And  $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following finite intersection- $$\bigcap_{i \in I}^{n} (U_i) \in \tau$$ so $$\phi(\bigcap_{i \in I}^{n} (U_i)) = T$$ (Note, empty set is also in the collection).
 
 So the assumption holds and the collection forms a topology on $$X$$. This is an elementary topology called the discrete topology, when the collection is the power set of a set $$X$$.
 
