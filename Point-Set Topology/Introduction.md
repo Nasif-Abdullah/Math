@@ -17,7 +17,7 @@ Take any set $$X$$ and define $$\tau = \{U \mid U \subset X \wedge \phi(U) = T\}
 
 Note, the set-builder only picks up subsets of the set $$X$$ so, it's a valid set-builder and won't explode to any set-theoric inconsistencies. Obviously, $$\tau$$ is a collection of sets.
 
-A topological space is the ordered pair $$(X, \tau)$$. If for any $$U \in X U \in \tau$$, we can $$U$$ an open set. The naming is completely arbitrary here.
+A topological space is the ordered pair $$(X, \tau)$$. If for any $$U \subset X$$ we have $$U \in \tau$$, we say $$U$$ is an open set. The naming is completely arbitrary here.
 
 We now begin with a simple example on what can and can't be a topology. 
 
