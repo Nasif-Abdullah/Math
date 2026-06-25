@@ -21,7 +21,7 @@ A topological space is the ordered pair $$(X, \tau)$$. If for any $$U \in X U \i
 
 We now begin with a simple example on what can and can't be a topology. 
 
-Take a set $$X$$ = $$\{a,b,c\}$$, and we take the following subsets, $$U_i \in X$$ and the $$U_i$$'s are, in order, the following sets- $$\{a\}, \{b\}, \{c\}, \{a,b\}, \{b,c\}, \{a,c\}, \{a,b,c\}, \emptyset\$$. We assume $$\phi(U_i) = T$$ so we construct the collection, $$\tau = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{a\}, \{a,b,c\}\}$$ Now we check if it forms a topology-
+Take a set $$X$$ = $$\{a,b,c\}$$, and we take the following subsets, $$U_i \in X$$ and the $$U_i$$'s are, in order, the following sets- $$\{a\}, \{b\}, \{c\}, \{a,b\}, \{b,c\}, \{a,c\}, \{a,b,c\}, \emptyset$$. We assume $$\phi(U_i) = T$$ so we construct the collection, $$\tau = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{a\}, \{a,b,c\}\}$$ Now we check if it forms a topology-
 
  - $$(\phi(\{a,b,c\}) = T) \wedge (\phi(\emptyset) = T)$$ By assumption.
  - By assumption $$(\forall i \in I) \ \ \phi(U_i) = T$$ so we have the following unions- $$\bigcup_{i \in I} (U_i) \in \tau$$ so $$\phi(\bigcup_{i \in I} (U_i)) = T$$ (Works because the union is in $$\tau$$ and every element of $$tau$$ satisfies the predicate by assumption. One can check it holds for every two or more elements)
