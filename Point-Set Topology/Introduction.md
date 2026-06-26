@@ -13,7 +13,7 @@ Take any set $$X$$ and define $$\tau = \{U \mid U \subseteq X \wedge \phi(U) = T
 
  - $$\phi(\emptyset) = T$$ and $$\phi(X) = T$$.
  - $$(\forall i \in I) \ \ \phi(U_i) = T \rightarrow \phi(\bigcup_{i \in I} U_{i}) = T$$ 
- - $$(\bigwedge_{i=1)^n \phi(U_i) = T) = T \rightarrow \phi(\bigcap_{i=1}^{n} U_{i}) = T$$ for any $$n \in \mathbb{N}$$
+ - $$(\bigwedge_{i=1}^n \phi(U_i) = T) = T \rightarrow \phi(\bigcap_{i=1}^{n} U_{i}) = T$$ for any $$n \in \mathbb{N}$$
 
 Note, the set-builder only picks up subsets of the set $$X$$ so it's a valid set-builder and won't explode into any set-theoretic inconsistencies. Obviously, $$\tau$$ is a collection of sets.
 
