@@ -29,4 +29,18 @@ Take a set $$X$$ = $$\{a,b,c\}$$, and we take the following subsets, $$U_i \in X
 
 So the assumption holds and the collection forms a topology on $$X$$. This is an elementary topology called the discrete topology, when the collection is the power set of a set $$X$$.
 
+Meanwhile, if the collection was constructed like $$\tau = \{\{a\}, \{b\}, \{c\}, \{a,b\}, \{a,c\}, \{a,b,c\}, \emptyset\}$$, union of $$\{b\}$$ and $$\{c\}$$ is not present in the collection, so the collection $$\tau$$ is not a topology.
+
 From now on we will have $$\phi(U) \iff \phi(U) = T$$ from set theory notations. This will make the prose economic too.
+
+##Cofinite topology
+
+Let X be an infinite set and we have $$U \subseteq X$. $We define the predicate as $$\phi(U) \iff (U = \emptyset) \lor Finiteness(X \setminus U)$$. This roughly translates to "$$U \subseteq X$$ is open iff it's complement is finite or it is the empty set.
+
+If a set $$U$$ is not finite, here, $$Finiteness(U) = T$$. Now we have-
+
+ - $$U = X \rightarrow \phi(\tau) as Finiteness(X \setminus X)$$ (which is just the empty set). And $$U = \emptyset \rightarrow \phi(U)$$ (by definition)
+ - Assume $$(\forall i \in I)\ \ \phi(U_i)$$. Now if all $$U_i = \emptyset \rightarrow \bigcup_{i \in I} (U_i)$$ (as it will just be the empty set), and if $$(\exists j \in I) \ \ U_j \neq \emptyset$$. Now as we assumed $$\phi(U_i)$$ and $$U_i \noteq \emptyset$$, so $$Finiteness(X \setminus U_j)$$ holds. Now we have, $$X \setminus (\bigcup_{i \in I}) = \bigcap_{i \in I} (X \setminus U_i)$$, and intersection of finite sets is finite so, $$\phi(\bigcup_{i \in I}) U_i)$$ holds.
+ - Similarly, finite union of finite sets is finite, so the intersection property holds (De-Morgan).
+
+So, $$\tau$$ is a topology.
