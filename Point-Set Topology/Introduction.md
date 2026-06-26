@@ -33,9 +33,9 @@ Meanwhile, if the collection was constructed like $$\tau = \{\{a\}, \{b\}, \{c\}
 
 From now on we will have $$\phi(U) \iff \phi(U) = T$$ from set theory notations. This will make the prose economic too.
 
-##Cofinite topology
+## Cofinite topology
 
-Let X be an infinite set and we have $$U \subseteq X$. $We define the predicate as $$\phi(U) \iff (U = \emptyset) \lor Finiteness(X \setminus U)$$. This roughly translates to "$$U \subseteq X$$ is open iff it's complement is finite or it is the empty set.
+Let X be an infinite set and we have $$U \subseteq X$$ .We define the predicate as $$\phi(U) \iff (U = \emptyset) \lor Finiteness(X \setminus U)$$. This roughly translates to "$$U \subseteq X$$ is open iff it's complement is finite or it is the empty set.
 
 If a set $$U$$ is not finite, here, $$Finiteness(U) = T$$. Now we have-
 
