@@ -39,7 +39,7 @@ Let X be an infinite set and we have $$U \subseteq X$$ .We define the predicate 
 
 If a set $$U$$ is not finite, here, $$Finiteness(U) = T$$. Now we have-
 
- - $$U = X \rightarrow \phi(\tau)$$ as $$Finiteness(X \setminus X)$$ (which is just the empty set). And $$U = \emptyset \rightarrow \phi(U)$$ (by definition)
+ - $$(U = X) \rightarrow \phi(\tau)$$ as $$Finiteness(X \setminus X)$$ (which is just the empty set). And $$(U = \emptyset) \rightarrow \phi(U)$$ (by definition)
  - Assume $$(\forall i \in I)\ \ \phi(U_i)$$. Now if all $$U_i = \emptyset \rightarrow \bigcup_{i \in I} (U_i)$$ (as it will just be the empty set), and if $$(\exists j \in I) \ \ U_j \neq \emptyset$$. Now as we assumed $$\phi(U_i)$$ and $$U_i \neq \emptyset$$, so $$Finiteness(X \setminus U_j)$$ holds. Now we have, $$X \setminus (\bigcup_{i \in I}) = \bigcap_{i \in I} (X \setminus U_i)$$, and intersection of finite sets is finite so, $$\phi(\bigcup_{i \in I}) U_i)$$ holds.
  - Similarly, finite union of finite sets is finite, so the intersection property holds (De-Morgan).
 
