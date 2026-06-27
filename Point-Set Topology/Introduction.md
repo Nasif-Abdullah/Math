@@ -47,6 +47,6 @@ So, $$\tau$$ is a topology.
 
 ## Trivial Topology
 For any set $$X$$, $$\tau = \{X, \emptyset\}$$ forms the trivial topology, which can be proven trivially. 
-Refering to the previous example, we have $$X = \{a,b,c\}$$. Now, let $$\tau$$ be the trivial topology, and $$\tau^{\mathfrak{B}}$$ be the discrete topology. Obviously, $$(\forall i \in I) (U_i \in \tau) \iff (U_i \in \tau^{\mathfrak{B}})$$, so $$\tau \subseteq \tau^{\mathfrak{B}}$$. Then $$\tau$$ is "coarser" than $$\tau^{\mathfrak{B}}$$, and $$\tau^{\mathfrak{B}}$$ is "finer" than $$\tau$$. If the containment is proper, we have strictly finer or strictly coarser topologies.
+Refering to the previous example, we have $$X = \{a,b,c\}$$. Now, let $$\tau$$ be the trivial topology, and $$\tau^{\mathfrak{B}}$$ be the discrete topology. Obviously, $$(\forall i \in I) (U_i \in \tau) \implies (U_i \in \tau^{\mathfrak{B}})$$, so $$\tau \subseteq \tau^{\mathfrak{B}}$$. Then $$\tau$$ is "coarser" than $$\tau^{\mathfrak{B}}$$, and $$\tau^{\mathfrak{B}}$$ is "finer" than $$\tau$$. If the containment is proper, we have strictly finer or strictly coarser topologies.
 
 If for any two topologies such containment can be established, we call them comparable.
