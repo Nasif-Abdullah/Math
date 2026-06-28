@@ -9,7 +9,7 @@ Unfortunately there exist many branches of math where one doesn't get the privil
 
 Topology is basically like a "rule of the club" where you take any set, addresses its elements and check if these elements satisfy some conditions or axioms, which creates a topology.
 
-Take any set $$X$$ and define $$\tau = \{U \mid U \subseteq X \wedge \phi(U)\}$$ Where $$\phi(U) \iff \bigl(\phi(\emptyset) \wedge \phi(X) \bigr) \wedge \bigl((\forall U \subseteq X) \phi(U) \implies \phi(\bigcup U) \bigr) \wedge \bigl((\forall A \subseteq X, \forall B \subseteq X)(\phi(A) \wedge \phi(B) \implies \phi (A \cup B) \bigr)$$
+Take any set $$X$$ and define $$\tau = \{U \mid U \subseteq X \wedge \phi(U)\}$$ Where $$\phi(U) \iff \bigl(\phi(\emptyset) \wedge \phi(X) \bigr) \wedge \bigl((\forall U \subseteq X) \ \ (\phi(U) \implies \phi(\bigcup U)) \bigr) \wedge \bigl((\forall A \subseteq X, \forall B \subseteq X) \ \ (\phi(A) \wedge \phi(B) \implies \phi (A \cup B) \bigr)$$
 
 Note, the set-builder only picks up subsets of the set $$X$$ so it's a valid set-builder and won't explode into any set-theoretic inconsistencies. Obviously, $$\tau$$ is a collection of sets.
 
