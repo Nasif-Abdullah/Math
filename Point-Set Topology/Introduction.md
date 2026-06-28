@@ -9,11 +9,7 @@ Unfortunately there exist many branches of math where one doesn't get the privil
 
 Topology is basically like a "rule of the club" where you take any set, addresses its elements and check if these elements satisfy some conditions or axioms, which creates a topology.
 
-Take any set $$X$$ and define $$\tau = \{U \mid U \subseteq X \wedge \phi(U) = T\}$$ Where the properties, $$\phi(U)$$, are listed below-
-
- - $$\phi(\emptyset) = T$$ and $$\phi(X) = T$$
- - $(\forall i \in I) \ \ \phi(U_i) = T \rightarrow \phi(\bigcup_{i \in I} U_{i}) = T$
- - $$(\bigwedge_{i=1}^n \phi(U_i) = T) = T \rightarrow \phi(\bigcap_{i=1}^{n} U_{i}) = T$$ for any $$n \in \mathbb{N}$$
+Take any set $$X$$ and define $$\tau = \{U \mid U \subseteq X \wedge \phi(U)\}$$ Where $$\phi(U) \iff (\phi(\emptyset) = T$$ \wedge $$\phi(X) = T) \wedge ($$(\forall i \in I) \ \ \phi(U_i) \rightarrow \phi(\bigcup_{i \in I} U_{i})) \wedge ((\forall i \in \{1,...n})(\bigwedge_{i=1}^n \phi(U_i)) \rightarrow \phi(\bigcap_{i=1}^{n} U_{i})$$
 
 Note, the set-builder only picks up subsets of the set $$X$$ so it's a valid set-builder and won't explode into any set-theoretic inconsistencies. Obviously, $$\tau$$ is a collection of sets.
 
