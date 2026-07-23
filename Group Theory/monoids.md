@@ -13,7 +13,7 @@ Define the function $f : S \times S \rightarrow S$ as the binary operation on a 
 
 The element $e$ is known as the multiplicative identity, some structures do not possess such element, which are known as semigroups.
 
-The identity element is unique, as if we hypothesize a new identity element, $e^{'}$, we have, $e = e \cdot e^{'} = e{'} \cdot e = e^{'}$.
+The identity element is unique, as if we hypothesize a new identity element, $e'$, we have, $e = e \cdot e' = e' \cdot e = e^'$.
 
 For convenience we can write $a \cdot b = ab$. For associativity, we can stretch it to three elements, $(a \cdot b) \cdot c = a \cdot (b \cdot c) = a \cdot b \cdot c = abc$.
 
