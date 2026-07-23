@@ -13,19 +13,29 @@ Define the function $f : S \times S \rightarrow S$ as the binary operation on a 
 
 The element $e$ is known as the multiplicative identity, some structures do not possess such element, which are known as semigroups.
 
-The identity element is unique, as if we hypothesize a new identity element, $e^'$, we have, $e = e \circ e^' = e' \circ e = e^'$.
+The identity element is unique, as if we hypothesize a new identity element, $e^{'}$, we have, $e = e \circ e^{'} = e{'} \circ e = e^{'}$.
 
 For convenience we can write $a \circ b = ab$. For associativity, we can stretch it to three elements, $(a \circ b) \circ c = a \circ (b \circ c) = a \circ b \circ c = abc$.
 
 Associativity holds for $n$ elements, which we will prove by induction-
 
-First we define the left-associated product $P(a_{1}, ..., a_{n})$ as follows-
-for $n = 1$, $P(a_1) = a_1$
-for $n = 2$, $P(a_1, a_2) = a_1 a_2$
-For $n > 2$, $P(a_{1}, ..., a_{n}) = P(a_{1}, ..., a_{n-1}) a_n$
+Any fully parenthesized product of $n$ elements $a_1, a_2, \dots, a_n$ in a monoid $M$ yields the same result, which is equal to the standard product $\prod_{i=1}^n a_i$.
 
-Now, we have for $n = 1,2,3$ associativity holds. Now let for any $k < n$ (where $n \geq 4$) any arbitrary parenthesized product evaluates to the standard left-associated product.
+Let $P$ be any fully parenthesized product of $n$ elements $a_1, a_2, \dots, a_n$. We use strong induction on $n$.
 
-Now take any arbitrary parenthesization of $n$ elements. Any full parenthesization splits the sequence to some binary operation, so the product can be written as-
-$$X = (a_{1} \circ a_{2} ... a_k) \circ (a_{k+1} ... a_n)$$
-as by our inductive hypothesis, $a_{1} \circ a_{2} ... a_k$ follows associativity, and the rest is arbitrarily multiplied. Now, we have $a_{1} \circ a_{2} ... a_k = P ($a_{1} \circ a_{2} ... a_k)$
+Base Cases ($n = 1, 2$):
+For $n = 1$, $P = a_1 = \prod_{i=1}^1 a_i$.
+For $n = 2$, the only valid parenthesization is $(a_1 \cdot a_2) = \prod_{i=1}^2 a_i$.
+
+Assume that for all $1 \le k < n$, every valid parenthesization of $k$ elements equals the standard product of those $k$ elements.
+
+Now consider a fully parenthesized product $P$ of $n$ elements. By the definition of a binary operation, $P$ must be the product of two smaller parenthesized expressions:
+$$P = P_1 \cdot P_2$$
+where $P_1$ is a fully parenthesized product of the first $m$ elements ($a_1, \dots, a_m$) and $P_2$ is a fully parenthesized product of the remaining $n - m$ elements ($a_{m+1}, \dots, a_n$) for some $1 \le m < n$.
+
+Since $m < n$ and $n - m < n$, we apply the strong inductive hypothesis to both $P_1$ and $P_2$:
+$$P_1 = \prod_{i=1}^m a_i \quad \text{and} \quad P_2 = \prod_{j=m+1}^n a_j$$
+Therefore, we have:
+$$P = \left( \prod_{i=1}^m a_i \right) \cdot \left( \prod_{j=m+1}^n a_j \right)$$
+By the Lemma, this expression simplifies to:
+$$P = \prod_{k=1}^n a_k$$
