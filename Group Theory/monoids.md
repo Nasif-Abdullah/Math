@@ -6,7 +6,7 @@ title: Monoids
 Define the function $f : S \times S \rightarrow S$ as the binary operation on a set $S$, where $S \times S$ has all pairs $(x,y)$ when $x, y \in S$. The ordered pair, $(S, \cdot)$ is a mnonoid if-
 
  - S is a set
- - $\cdot$ is a binary operation on S, i.e. $\cdot \ \ : \ \ S \times S \rightarrow S$
+ - $\cdot$ is a binary operation on S, i.e. $\cdot: S \times S \rightarrow S$
  - $(\forall x,y \in S)$ $a,b \in S \implies a \cdot b \in S$ (Closure)
  - $(\forall x,y,z \in S)$ $(a \cdot b) \cdot c = a \cdot (b \cdot c)$ (Associativity)
  - $\exists e \in S$ such that $(\forall a \in S) \ \ e \cdot a = a \cdot e = a$
