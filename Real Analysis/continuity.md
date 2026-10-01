@@ -11,4 +11,4 @@ The definition have some logical properties-
  
  - We first choose an $\epsilon >0$. The definition suggests that any values of epsilon should satisfy the implications. After choosing any $\epsilon$, like $\epsilon = 1$, 
  - We find a $\delta > 0$ such that the implication holds. For any $\delta$ which we claim to satisfy the implication, for any point $y \in N_{\delta} (x)$ we must have $d(fx, fy)<\epsilon$ for the chosen epsilon.
- - For the points $y$ such that $y \in M / N_{\delta} (x)$, the logical implication is vacuously true ($P(F \implies T) = T$). 
+ - For the points $y$ such that $y \in M / N_{\delta} (x)$, the logical implication is vacuously true (F \implies T \equiv T$). 
